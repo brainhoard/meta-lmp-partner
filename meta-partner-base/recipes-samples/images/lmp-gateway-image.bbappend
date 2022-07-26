@@ -3,4 +3,5 @@
 #@DESCRIPTION: LMP Base
 
 CORE_IMAGE_BASE_INSTALL += " \
+    klish \
 "
