@@ -16,4 +16,4 @@ inherit autotools
 
 EXTRA_OECONF = ""
 
-FILES_${PN} = "*"
+# FILES_${PN} = "*"

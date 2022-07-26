@@ -14,8 +14,8 @@ LIC_FILES_CHKSUM = "file://LICENCE;md5=763c2d89173e7008fab9b7ecf2605ab5"
 
 inherit autotools
 
-DEPENDS = "faux"
+DEPENDS = "faux libxml2 expat"
 
 EXTRA_OECONF = ""
 
-FILES_${PN} = "*"
+# FILES_${PN} = "*"
