@@ -2,5 +2,5 @@
 #@NAME: LMP Base
 #@DESCRIPTION: LMP Base
 
-CORE_IMAGE_BASE_INSTALL += " \
+CORE_IMAGE_BASE_INSTALL:append = " \
 "
