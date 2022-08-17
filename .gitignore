@@ -1,2 +1,7 @@
 __pycache__
 *.pyc
+
+build*
+downloads
+sstate-cache
+workspace
