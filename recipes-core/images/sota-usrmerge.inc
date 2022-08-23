@@ -1,36 +1,6 @@
 #@TYPE: Image
-#@NAME: LMP Gateway Image
-#@DESCRIPTION: LMP Gateway Image
-
-CORE_IMAGE_BASE_INSTALL:append = " \
-    can-utils \
-    canutils \
-    i2c-tools \
-    klish \
-    modemmanager \
-    networkmanager \
-    nvme-cli \
-    spitools \
-    kernel-modules \
-    "
-
-CORE_IMAGE_BASE_INSTALL:append:tegra = " \
-    packagegroup-core-buildessential \
-    "
-
-CORE_IMAGE_BASE_INSTALL:append:tegra210 = " \
-    u-boot-tools \
-    u-boot-ostree-scr \
-    "
-
-# u-boot-ostree-scr-fit
-# packagegroup-core-buildessential
-# packagegroup-self-hosted # DISTRO_FEATURES x11
-
-KERNEL_MODULE_AUTOLOAD:append = " binfmt-misc"
-
-KERNEL_MODULE_PROBECONF:append = " g-mass-storage"
-module_conf:g-mass-storage = "options g-mass-storage removeable=y"
+#@NAME: SOTA usrmerge
+#@DESCRIPTION: SOTA usrmerge rootfs folder preperation
 
 IMAGE_CMD:append:ota () {
     if [ "${OSTREE_BOOTLOADER}" = "syslinux" ]; then
@@ -44,7 +14,6 @@ IMAGE_CMD:append:ota () {
 # virtual/kernel:do_deploy ostree-native:do_populate_sysroot \
 # "
 
-# prepare for image_types_ostree.bbclass
 ROOTFS_PREPROCESS_COMMAND:append:sota = "rootfs_sota_raw;"
 rootfs_sota_raw() {
 
